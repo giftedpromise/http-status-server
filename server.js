@@ -12,6 +12,12 @@ app.get("/success", (req, res) => {
     .json({ status: "success", message: "This is a successful response." });
 });
 
+// Route: Error response 
+app.get('/error', (req, res) => {
+  res.status(500).json({ status: 'error', message: 'An internal server error occurred.' });
+});
+
+
 // Default route for undefined endpoints
 app.use((req, res) => {
   // 404: Not Found
